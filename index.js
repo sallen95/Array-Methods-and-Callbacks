@@ -69,7 +69,7 @@ function getWinners(cbFunc){
         else if (item["Home Team Goals"] < item["Away Team Goals"]){
             return item["Away Team Name"];
         }
-    })
+    });
 }
 
 
@@ -90,11 +90,13 @@ getWinnersByYear();
 
 /* Task 6: Write a function called `getAverageGoals` that accepts a parameter `data` and returns the the average number of home team goals and away team goals scored per match (Hint: use .reduce and do this in 2 steps) */
 
-function getAverageGoals(/* code here */) {
-
-    /* code here */
-
+function getAverageGoals(data) {
+    data.reduce(function(acc, currentValue){
+        return acc + currentValue["Home Team Goals"];
+    }, 0);
 };
+
+console.log(getAverageGoals(fifaData));
 
 getAverageGoals();
 
@@ -105,7 +107,7 @@ getAverageGoals();
 Hint: Investigate your data to find "team initials"!
 Hint: use `.reduce` */
 
-function getCountryWins(/* code here */) {
+function getCountryWins() {
 
     /* code here */
 
